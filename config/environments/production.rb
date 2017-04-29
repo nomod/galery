@@ -76,6 +76,7 @@ Rails.application.configure do
       password: ENV["password"],
       authentication: 'plain',
       enable_starttls_auto: true,
+      ssl: true,
       tls: true
   }
   #настройки gmail для отправки почты
