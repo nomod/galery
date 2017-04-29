@@ -16,7 +16,7 @@
                   span.nav__link-text = link_to 'Все юзеры', users_path
             li.nav__item
               .nav__link
-                span.nav__link-text = link_to 'Выйти быра', signout_path, method: 'delete'
+                span.nav__link-text = link_to 'Выйти', signout_path, method: 'delete'
             li.nav__item
               .nav__link
                 span.nav__link-text.fio = link_to "#{current_user.user_name}" + " " +"#{current_user.surname}", current_user
