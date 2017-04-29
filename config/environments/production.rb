@@ -70,12 +70,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address: 'smtp.gmail.com',
-      port: '587',
+      port: '465',
       domain: 'gmail.com',
       user_name: ENV["user_name"],
       password: ENV["password"],
       authentication: 'plain',
-      enable_starttls_auto: true
+      enable_starttls_auto: true,
+      tls: true
   }
   #настройки gmail для отправки почты
 
