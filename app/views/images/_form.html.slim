@@ -1,0 +1,10 @@
+p
+= form_for :albums, html: {multipart: true, class: 'image_form'}, authenticity_token: true do |f|
+  .form-inline
+    .form-avatar
+      //для массовой загрузки необходимо закинуть все фото в массив и явно указать имя поля name: 'mass_images[]'
+      = f.file_field :image, multiple: true, name: 'mass_images[]'
+    .form-user.hidden
+      = f.hidden_field :album_id, value: "#{@current_album.id}"
+    .form-albom-btn
+      = f.submit 'Добавить', name: 'add_foto_btn'

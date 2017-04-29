@@ -1,0 +1,129 @@
+- @title = 'Альбомы пользователя: ' "#{current_user.user_name}" + ' ' + "#{current_user.surname}"
+.inner
+  .header-h1 Ваши альбомы
+
+  //если нет ни публичных альбомов, ни приватных
+  -if @fotos_hash_public_user.empty? && @fotos_hash_private_user.empty?
+    .error
+      | Вы еще не создали ни одного альбома
+      br
+      br
+      i.fa.fa-frown-o.fa-3x aria-hidden="true"
+
+  //если есть публичные альбомы
+  - if !@fotos_hash_public_user.empty?
+
+    .header-h3 Публичные альбомы
+
+    - @fotos_hash_public_user.each do |key, fotos|
+      - if !fotos.empty?
+        a href="/albums/#{key}"
+          .album
+            .block_foto_1
+              //выбираем 3 рандомные фото
+              - @random_foto = fotos.sample(100)
+              .foto_1
+                = image_tag "#{@random_foto.sample().image.fill}"
+              .foto_2
+                = image_tag "#{@random_foto.sample().image.fill}"
+            .block_foto_3
+              .foto_3
+                = image_tag "#{@random_foto.sample().image.fill}"
+            .clear
+            .name_album
+              = @albums_name_public_user["#{key}"]
+            .owner_album
+              = 'Владелец: '"#{current_user.user_name}" + ' ' + "#{current_user.surname}"
+      - else
+        a href="/albums/#{key}"
+          .album
+            .error
+              | Альбом пуст
+              br
+              br
+              i.fa.fa-frown-o.fa-3x aria-hidden="true"
+            .name_album
+              = @albums_name_public_user["#{key}"]
+            .owner_album
+              = 'Владелец: '"#{current_user.user_name}" + ' ' + "#{current_user.surname}"
+
+
+  //если есть приватные альбомы
+  - if !@fotos_hash_private_user.empty?
+
+    .header-h3 Приватные альбомы
+
+    - @fotos_hash_private_user.each do |key, fotos|
+      - if !fotos.empty?
+        a href="/albums/#{key}"
+          .album
+            .block_foto_1
+              //выбираем 3 рандомные фото
+              - @random_foto = fotos.sample(100)
+              .foto_1
+                = image_tag "#{@random_foto.sample().image.fill}"
+              .foto_2
+                = image_tag "#{@random_foto.sample().image.fill}"
+            .block_foto_3
+              .foto_3
+                = image_tag "#{@random_foto.sample().image.fill}"
+            .clear
+            .name_album
+              = @albums_name_private_user["#{key}"]
+            .owner_album
+              = 'Владелец: '"#{current_user.user_name}" + ' ' + "#{current_user.surname}"
+      - else
+        a href="/albums/#{key}"
+          .album
+            .error
+              | Альбом пуст
+              br
+              br
+              i.fa.fa-frown-o.fa-3x aria-hidden="true"
+            .name_album
+              = @albums_name_private_user["#{key}"]
+            .owner_album
+              = 'Владелец: '"#{current_user.user_name}" + ' ' + "#{current_user.surname}"
+
+
+  //если есть доступные публичные альбомы
+  - if !@fotos_hash_public.empty?
+
+    .header-h1 Доступные вам публичные альбомы
+
+    - @fotos_hash_public.each do |key, fotos|
+      - if !fotos.empty?
+        a href="/albums/#{key}"
+          .album
+            .block_foto_1
+              //выбираем 3 рандомные фото
+              - @random_foto = fotos.sample(100)
+              .foto_1
+                = image_tag "#{@random_foto.sample().image.fill}"
+              .foto_2
+                = image_tag "#{@random_foto.sample().image.fill}"
+            .block_foto_3
+              .foto_3
+                = image_tag "#{@random_foto.sample().image.fill}"
+            .clear
+            .name_album
+              = @albums_name_public["#{key}"]
+            .owner_album
+              = 'Владелец: '
+              = @owner_hash_public["#{key}"]
+      - else
+        a href="/albums/#{key}"
+          .album
+            .error
+              | Альбом пуст
+              br
+              br
+              i.fa.fa-frown-o.fa-3x aria-hidden="true"
+            .name_album
+              = @albums_name_public["#{key}"]
+            .owner_album
+              = 'Владелец: '
+              = @owner_hash_public["#{key}"]
+
+  .new_album
+    = link_to 'Новый альбом', new_album_path

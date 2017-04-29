@@ -1,0 +1,20 @@
+- @title = 'Формирование нового пароля'
+.inner
+  .header-h1 Формирование нового пароля
+  p
+    = form_for @user, url: reset_path do |f|
+      - if @user.errors.any?
+        #error_explanation
+          h2 = 'Обратите внимания на следующие поля:'
+          ul
+            - @user.errors.full_messages.each do |message|
+              li = message
+      .form-inline
+        .form-user
+          = f.hidden_field :email, value: "#{@user.email}"
+        .form-user
+          = f.password_field :password, required: true, placeholder: 'Пароль*', minlength: 6
+        .form-user
+          = f.password_field :password_confirmation, required: true, placeholder: 'Подтвердите пароль*', minlength: 6
+        .form-rega-btn
+          = f.submit('Сохранить пароль')

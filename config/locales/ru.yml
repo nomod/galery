@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+      attributes:
+          album:
+            album_name: 'название альбома'
+          user:
+            user_name: 'Имя'
+            surname: 'Фамилию'
+            email: 'Почта'
+            password: 'Пароль'
+            password_confirmation: 'Пароль подтверждения'
+
+      errors:
+        models:
+          user:
+            attributes:
+              password_confirmation:
+                confirmation: 'не совпадает'
+              email:
+                taken: 'пользователь с такой почтой уже зарегистирирован'

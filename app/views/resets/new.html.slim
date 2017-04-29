@@ -1,0 +1,10 @@
+- @title = 'Сброс пароля'
+.inner
+  .header-h1 Сброс пароля
+  p
+    = form_for :reset, url: resets_url do |f|
+      .form-inline
+        .form-user
+          = f.text_field :email, required: true, placeholder: 'Электронная почта*', minlength: 5
+        .form-user-btn
+          = f.submit('Выслать')

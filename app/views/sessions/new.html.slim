@@ -1,0 +1,15 @@
+- @title = 'Страница входа'
+.inner
+  .header-h1 Вoйти
+  p
+    = form_for :session, url: sessions_path do |f|
+      .form-inline
+        .form-user
+          = f.text_field :email, required: true, placeholder: 'Электронная почта*', minlength: 5, value: "#{@email}"
+        .form-user
+          = f.password_field :password, required: true, placeholder: 'Пароль*', minlength: 6
+        .form-user-btn
+          = f.submit('ВОЙТИ')
+
+  .forgot_password
+    = link_to 'Забыли пароль?', new_reset_path

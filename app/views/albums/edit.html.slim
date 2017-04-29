@@ -1,0 +1,42 @@
+- @title = "#{@current_album.album_name}"
+.inner
+  .header-h1 Редактируем альбом "#{@current_album.album_name}"
+
+  /ссылка назад на альбом
+  .href_update_name_album = link_to 'Назад', album_path
+
+  /форма обновления названия альбома
+  p
+  = form_for @current_album do |f|
+    - if @current_album.errors.any?
+      #error_explanation
+        h2 = 'Обратите внимания на следующие поля:'
+        ul
+          - @current_album.errors.full_messages.each do |message|
+            li = message
+    .form-inline
+      .form-albom-rename
+        = f.text_field :album_name, required: true, placeholder: 'Новое название альбома*', minlength: 3, value: ""
+      .form-user
+        = f.hidden_field :user_id, value: "#{current_user.id}"
+      .form-albom-rename-btn
+        = f.submit 'Переименовать альбом'
+
+
+  /вывод фото в альбоме для удаления (обработка формы в images_controller)
+  p
+  = form_for :images, url: image_path, method: 'delete' do |f|
+    table.table.table-striped
+      - @all_foto.each do |foto|
+        tr
+          td = image_tag "#{foto.image.fill}"
+          td = f.check_box :image, { multiple: true }, "#{foto.id}", nil
+      tr.hidden_tr
+        td = f.submit 'Удалить выбранные фотографии', name: 'delete_img_btn'
+        td
+
+  /удаление альбома
+  .form-inline
+    .form-albom-btn-delete
+      = link_to 'Удалить альбом', @current_album, data: { confirm: 'Уверен?' }, method: 'delete'
+

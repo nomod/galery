@@ -1,0 +1,57 @@
+- @title = "#{@current_album.album_name}"
+.inner
+  .header-h1 Фотографии в альбоме: "#{@current_album.album_name}"
+
+  - if current_user == @user
+    /ссылка на редактирование альбома только для владельца альбома
+    .href_update_name_album = link_to 'Редактировать альбом', edit_album_path
+
+    /форма добавления фото в альбом только для владельца альбома
+    = render 'images/form'
+
+  /скрытый див с id альбома (для js)
+  .form-user.hidden = "#{@current_album.id}"
+
+.inner_full
+  /скрытая область для просмотра крупных фото
+  .pop_up_slider
+    .hidden_foto
+      .close_slider X
+      #carousel-image.carousel.slide data-interval="false"
+        .carousel-inner.image-slider role="listbox"
+          - @all_foto_album.each do |f|
+            .item id="#{f.id}"
+              .imgin
+                = image_tag "#{f.image}"
+        a.left.carousel-control.color data-slide="prev" href="#carousel-image" role="button"
+          i.diplom-fa.fa.slider.fa-chevron-left.fa-3x aria-hidden="true"
+          span.sr-only Previous
+        a.right.carousel-control.color data-slide="next" href="#carousel-image" role="button"
+          i.diplom-fa.fa.slider.fa-chevron-right.fa-3x aria-hidden="true"
+          span.sr-only Next
+
+.inner
+  /вывод фото в альбоме
+  #album_fotos
+    - if @all_foto_album.empty?
+      .error
+        | Альбом пустой
+        p
+          i.fa.fa-frown-o.fa-lg aria-hidden="true"
+    - else
+      - @all_foto_album.each do |foto|
+        .thumb id="#{foto.id}"
+          .album_foto_block
+            .album_foto_in
+              = image_tag "#{foto.image.fill}"
+
+  .clear
+
+  /всплывающие окна
+  /.dop-block
+    .pop_up_ok
+      .pop_up_ok_slogan Готово!
+
+  /.dop-block
+    .pop_up_error_500
+      .pop_up_error_500_slogan Вы уже оценивали этого врача

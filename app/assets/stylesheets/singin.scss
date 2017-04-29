@@ -1,0 +1,151 @@
+.header-h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.form-user {
+  vertical-align: middle;
+  padding: 0 9px;
+  width: 410px;
+  margin: auto;
+}
+.form-user input {
+  width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 1px 23px 0;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  box-shadow: none;
+  margin-bottom: 15px;
+  -webkit-appearance: none;
+}
+.form-user select {
+  width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 1px 23px 0;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+.form-user-btn{
+  vertical-align: middle;
+  padding: 0 9px;
+  width: 250px;
+  margin: auto;
+}
+.form-rega-btn {
+  vertical-align: middle;
+  padding: 0 9px;
+  width: 320px;
+  margin: auto;
+}
+.form-user-btn input, .form-rega-btn input {
+  width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 1px 23px 0;
+  border: 1px solid #c4c4c4;
+  box-shadow: none;
+  -webkit-appearance: none;
+  background-color: white;
+  border-radius: 40px;
+  color: #0e0e0e;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+
+  &:hover{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+}
+.form-avatar, .form-albom-btn, .form-albom-rename-btn, .form-albom-rename{
+  display: inline-block;
+  width: 300px;
+}
+.form-albom-btn input {
+  width: 145px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 40px;
+  color: #0e0e0e;
+  font-size: 20px;
+  font-weight: bold;
+  &:hover{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+}
+.form-inline{
+  text-align: center;
+}
+.form-avatar input {
+  padding: 10px;
+  width: 353px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 40px;
+  color: #0e0e0e;
+  font-size: 15px;
+  font-weight: bold;
+}
+.form-albom-rename-btn input{
+  width: 320px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 40px;
+  color: #0e0e0e;
+  font-size: 20px;
+  font-weight: bold;
+}
+.form-albom-rename input {
+  width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 1px 23px 0;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  box-shadow: none;
+  margin-bottom: 15px;
+  -webkit-appearance: none;
+}
+.form-albom-rename {
+  vertical-align: middle;
+  padding: 0 9px;
+  width: 410px;
+  margin: auto;
+}
+.form-albom-btn-delete a {
+  vertical-align: middle;
+  background-color: white;
+  border-radius: 40px;
+  color: #0e0e0e;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  &:hover{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+}
+.forgot_password{
+  text-align: center;
+}
+#error_explanation{
+  & h2{
+    background-color: #ab1c1c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 26px;
+  }
+}

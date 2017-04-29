@@ -1,0 +1,90 @@
+$background_foto_color: white;
+.album{
+  width: 100%;
+  min-height: 500px;
+  background-image: image-url('pictures/back_album.png');
+  background-repeat: repeat;
+  margin: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 50px;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
+}
+.block_foto_1{
+  margin: 40px;
+}
+.foto_1{
+  border: 15px solid $background_foto_color;
+  background-color: $background_foto_color;
+  box-shadow: 2px 10px 28px rgba(0, 0, 0, 0.5);
+  transform: rotate(1deg);
+  width: 200px;
+  height: 227px;
+  top: 100px;
+  margin-bottom: 40px;
+}
+.foto_2{
+  border: 15px solid $background_foto_color;
+  background-color: $background_foto_color;
+  box-shadow: 2px 10px 28px rgba(0, 0, 0, 0.5);
+  transform: rotate(-1deg);
+  width: 200px;
+  height: 227px;
+  top: 100px;
+}
+.foto_3{
+  border: 15px solid $background_foto_color;
+  background-color: $background_foto_color;
+  box-shadow: 2px 10px 28px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+  width: 300px;
+  height: 327px;
+  top: 100px;
+}
+.block_foto_3{
+  margin: 40px;
+}
+.foto_1 img, .foto_2 img, .foto_3 img{
+  width: 100%;
+}
+.name_album{
+  position: absolute;
+  bottom: 98px;
+  left: 470px;
+  font-size: 24px;
+  color: #5d5b5b;
+}
+.owner_album{
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  color: #5d5b5b;
+  right: 20px;
+  font-weight: bold;
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+.new_album a{
+  padding: 15px 30px 15px 30px;
+  border: 1px solid #c4c4c4;
+  background-color: white;
+  border-radius: 40px;
+  color: #0e0e0e;
+  font-size: 20px;
+  font-weight: bold;
+  &:hover{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+}
+.new_album{
+  text-align: center;
+  margin-top: 60px;
+}
+.href_update_name_album{
+  text-align: end;
+  text-decoration: underline;
+  & a{
+    color: #ab1c1c;
+  }
+}

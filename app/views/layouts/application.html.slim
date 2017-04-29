@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta content = "text/html; charset=UTF-8" http-equiv = "Content-Type"
+    title = @title || 'Фотогалерея'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    //шрифт
+    = stylesheet_link_tag 'http://allfont.ru/allfont.css?fonts=ds-note'
+    //иконки
+    = stylesheet_link_tag '//cdn.hippicons.com/css/hippicons-min.css'
+
+  body
+    / .pop_up для затемнения фона при вызове модальной формы на услугах
+    .pop_up
+
+    = render 'shared/header'
+
+    /анимация во время загрузки фото
+    #loading-indicator
+      i.hi.hi-refresh.hi-spin.hi-4x
+
+
+    //выводим всплывающее сообщение об успешной регистрации
+    - flash.each do |key, value|
+      - if key == 'success'
+        .alert.alert-success = value
+      - else
+        .alert.alert-error = value
+
+    = yield
+    = render 'shared/footer'

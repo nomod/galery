@@ -1,0 +1,21 @@
+- @title = 'Страница пользователя:' "#{@user.user_name}" + ' ' + "#{@user.surname}"
+.inner
+  /общая инфа по пользователю
+  .header-h1 Информация о пользователе
+  table.table.table-striped
+    tbody
+      tr.info_user
+        td = 'Фамилия'
+        td.info_user_small = "#{@user.surname}"
+      tr.info_user
+        td = 'Имя'
+        td.info_user_small = "#{@user.user_name}"
+      tr.info_user
+        td = 'Почта'
+        td.info_user_small
+          p = "#{@user.email}"
+          p = link_to 'Изменить email', edit_update_email_path
+
+  .form-inline
+    .form-albom-btn-delete
+      .href_user_info = link_to 'Редактировать профиль', edit_user_path

@@ -1,0 +1,14 @@
+.table-striped > tbody > tr.hidden_tr{
+  display: none;
+  background-color: transparent !important;
+}
+.table-striped > tbody > tr {
+  background-color: #f9f9f9 !important;
+  margin-bottom: 10px;
+  & > td{
+    vertical-align: middle;
+  }
+  & > td > img{
+    width: 20%;
+  }
+}

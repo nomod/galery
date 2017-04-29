@@ -1,0 +1,4 @@
+h1 Спасибо за регистрацию #{@user.user_name} #{@user.surname}
+
+p = 'Для подтверждения пройдите по ссылке'
+p = link_to 'Подтвердить регистрацию', confirm_email_user_url(@user.confirm_token)

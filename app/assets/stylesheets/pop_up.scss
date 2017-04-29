@@ -1,0 +1,90 @@
+.dop-block {
+  position: relative;
+  float: right;
+  right: 48%;
+  margin-top: 3%;
+}
+.pop_up {
+  background-color: #272626;
+  display: none;
+  opacity: 0.6;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+}
+.pop_up_ok, .pop_up_error_500{
+  background-color: #4e9c84;
+  opacity: 1;
+  z-index: 20;
+  display: none;
+  position: fixed;
+  float: left;
+  left: 35%;
+  top: 30%;
+  width: 400px;
+  height: 200px;
+}
+.pop_up_ok_slogan {
+  position: absolute;
+  top: 46%;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  left: 4%;
+}
+.pop_up_error_500_slogan {
+  position: absolute;
+  top: 45%;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  left: 6%;
+}
+.pop_up_slider {
+  z-index: 20;
+  position: relative;
+  top: -133px;
+}
+.close_slider{
+  font-size: 22px;
+  color: #612222;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: end;
+  width: 99%;
+}
+.carousel-inner > .active {
+  width: 100%;
+  background-color: #f3efe7;
+  padding-top: 30px;
+  line-height: 636px;
+  text-align: center;
+  vertical-align: middle;
+}
+.carousel-inner > .item {
+  width: 100%;
+  background-color: #f3efe7;
+  padding-top: 30px;
+  line-height: 636px;
+  text-align: center;
+  vertical-align: middle;
+}
+.imgin img {
+  margin: auto;
+  padding-bottom: 30px;
+}
+.imgin{
+  display: inline-block;
+  width: 100%;
+}
+.slider {
+
+}
+.flex{
+  display:flex;
+}
+
+

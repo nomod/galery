@@ -1,0 +1,20 @@
+- @title = 'Добавление нового альбома'
+.inner
+  .header-h1 Добавление нового альбома
+  p
+    = form_for @album do |f|
+      - if @album.errors.any?
+        #error_explanation
+          h2 = 'Обратите внимания на следующие поля:'
+          ul
+            - @album.errors.full_messages.each do |message|
+              li = message
+      .form-block
+        .form-user
+          = f.text_field :album_name, required: true, placeholder: 'Название альбома*', minlength: 3, value: ""
+        .form-user
+          = f.select :status_id, options_from_collection_for_select(@status, :id, :status_name)
+        .form-user
+          = f.hidden_field :user_id, value: "#{current_user.id}"
+        .form-user-btn
+          = f.submit('Создать альбом')

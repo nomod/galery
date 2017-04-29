@@ -1,0 +1,35 @@
+- @title = 'Главная'
+.inner
+  .header-h2 Семейный фотоархив
+
+  //если пользователь авторизован
+  - if !current_user.nil?
+    - @arr_main_fotos = []
+
+    .main_foto_block
+      - @fotos_hash.each do |key, fotos|
+        - if !fotos.empty?
+          - @random_foto = fotos.sample(1)
+          - @arr_main_fotos.push(@random_foto)
+
+      - @arr_main_fotos.each do |foto|
+        - foto.each do |f|
+          .main_foto_in
+            = image_tag "#{f.image.fill}"
+
+  - else
+    .main_foto_block
+      - for x in [1,2]
+        .main_foto_in
+          = image_tag 'pictures/censored.png'
+      - for y in [1,2]
+        .main_foto_in
+          = image_tag 'pictures/censored2.png'
+      - for q in [1,2]
+        .main_foto_in
+          = image_tag 'pictures/censored3.png'
+      - for z in [1,2]
+        .main_foto_in
+          = image_tag 'pictures/censored4.png'
+
+    .header-h4 Для просмотра фото необходимо <br> зарегистрироваться или авторизоваться

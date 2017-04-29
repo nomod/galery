@@ -1,0 +1,3 @@
+class StatusAlbum < ApplicationRecord
+
+end

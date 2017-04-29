@@ -1,0 +1,24 @@
+$background_foto_color: white;
+#album_fotos{
+  margin-top: 60px;
+}
+.album_foto_block{
+  float: left;
+  margin: 15px;
+  cursor: pointer;
+}
+.album_foto_in{
+  border: 15px solid $background_foto_color;
+  background-color: $background_foto_color;
+  box-shadow: 4px 3px 12px rgba(0, 0, 0, 0.5);
+  transform: rotate(1deg);
+  width: 200px;
+  height: 227px;
+  top: 100px;
+}
+.album_foto_in img{
+  width: 100%;
+}
+.hidden_foto{
+  display: none;
+}
