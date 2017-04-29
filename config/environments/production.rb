@@ -65,7 +65,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   #настройки gmail для отправки почты(с какой почты будут отправляться письма)
-  config.action_mailer.default_url_options = { :host => '188.226.148.30' }
+  config.action_mailer.default_url_options = { :host => '188.226.138.180' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
